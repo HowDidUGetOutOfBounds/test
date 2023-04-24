@@ -11,8 +11,29 @@ public class Program {
          * Определите время поезда в пути в минутах (в данном случае 216).
          */
 
-        trainTask();
+        //trainTask();
 
+        /**
+         * Простая (2 балла)
+         *
+         * Пользователь задает целое трехзначное число (например, 478).
+         * Необходимо вывести число, полученное из заданного перестановкой цифр в обратном порядке (например, 874).
+         */
+
+        threeDigitNumberRevert();
+
+    }
+
+    private static void threeDigitNumberRevert() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите трехзначначное число");
+        int n = in.nextInt();
+
+        int first = n % 10;
+        int second = (n / 10) % 10;
+        int third = (n / 100) % 10;
+
+        System.out.println(first + "" + second + "" + third);
 
     }
 
@@ -33,11 +54,10 @@ public class Program {
         double result;
         double result1;
         result = ((h2 * 60 + m2) - (h1 * 60 + m1));
-        result1 = (((h2+24) * 60 + m2) - (h1 * 60 + m1));
-        if(h2>h1) {
+        result1 = (((h2 + 24) * 60 + m2) - (h1 * 60 + m1));
+        if (h2 > h1) {
             System.out.println("Время в пути составит = " + result);
-        }
-        else{
+        } else {
             System.out.println("Время в пути со сменой даты составит = " + result1);
         }
     }
