@@ -25,15 +25,17 @@ public class Program {
     }
 
     private static void threeDigitNumberRevert() {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Введите трехзначначное число");
-        int n = in.nextInt();
+        int num = 1234567, reversed = 0;
 
-        int first = n % 10;
-        int second = (n / 10) % 10;
-        int third = (n / 100) % 10;
+        while(num != 0) {
 
-        System.out.println(first + "" + second + "" + third);
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+
+            num /= 10;
+        }
+
+        System.out.println("Reversed Number: " + reversed);
 
     }
 
